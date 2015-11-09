@@ -32,7 +32,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener
 
 	public Rectangle bird;
 
-	public ArrayList<Rectangle> columns;
+	public ArrayList<Rectangle> columns, columnsUpper, columnsLower;
 
 	public int ticks, yMotion, score, highScore;
 
@@ -64,6 +64,8 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener
 
 		bird = new Rectangle(WIDTH / 2 - 10, HEIGHT / 2 - 10, 80, 50);
 		columns = new ArrayList<Rectangle>();
+		columnsUpper = new ArrayList<Rectangle>();
+		columnsLower = new ArrayList<Rectangle>();
 
 		addColumn(true);
 		addColumn(true);
@@ -97,7 +99,6 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener
 			columns.add(new Rectangle(columns.get(columns.size() - 1).x, 0, width, HEIGHT - height - space));
 		}
 	}
-
 
 	public void paintUpperColumn(Graphics g, Rectangle column)
 	{
